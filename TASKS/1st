@@ -38,7 +38,7 @@ for detail in highlighted_poems_details:
   poets.append(detail[1])
   dates.append(detail[2])
 for poem in highlighted_poems:
-  print("The poem {titles} was published by     {poets} in {dates}.".format(titles=titles,poets=poets,dates=dates))
+  print("The poem {titles} was published by {poets} in {dates}.".format(titles=titles,poets=poets,dates=dates))
 
 
 
