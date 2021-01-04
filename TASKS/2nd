@@ -1,0 +1,88 @@
+Q)Write a function named count_multi_char_x that takes a string named word and a string named x. This function should do the same thing as the count_char_x function you just wrote - it should return the number of times x appears in word. However, this time, make sure your function works when x is multiple characters long.
+
+For example, count_multi_char_x("Mississippi", "iss") should return 2
+code-
+def count_multi_char_x(word,x):
+  ans=word.split(x)
+  return (len(ans)-1)
+print(count_multi_char_x("mississippi", "iss"))
+print(count_multi_char_x("apple", "pp"))
+
+Q)Write a function named substring_between_letters that takes a string named word, a single character named start, and another character named end. This function should return the substring between the first occurrence of start and end in word. If start or end are not in word, the function should return word.
+
+For example, substring_between_letters("apple", "p", "e") should return "pl".
+code-
+def substring_between_letters(word,start,end):
+  begin=word.find(start)
+  last=word.find(end)
+  if(begin==-1 or last==-1):
+    return word
+  else:
+    return word[begin+1:last]
+
+print(substring_between_letters("apple", "p", "e"))
+print(substring_between_letters("apple", "p", "c"))
+
+Q)Create a function called x_length_words that takes a string named sentence and an integer named x as parameters. This function should return True if every word in sentence has a length greater than or equal to x.
+code-
+def x_length_words(sentence,x):
+  ans=[]
+  ans=sentence.split()
+  for word in ans:
+    if (len(word)<x):
+      return False
+    else:
+      return True
+print(x_length_words("i like apples", 2))
+print(x_length_words("he likes apples", 2))
+
+Q)Write a function called check_for_name that takes two strings as parameters named sentence and name. The function should return True if name appears in sentence in all lowercase letters, all uppercase letters, or with any mix of uppercase and lowercase letters. The function should return False otherwise.
+code-
+def check_for_name(sentence,name):
+  return name.lower() in sentence.lower()
+  return name.upper() in sentence.upper()
+  return false
+print(check_for_name("My name is Jamie", "Jamie"))
+print(check_for_name("My name is Jamie", "Jamie"))
+print(check_for_name("My name is jamie", "Jamie"))
+print(check_for_name("My name is Samantha", "Jamie")
+
+Q)Create a function named every_other_letter that takes a string named word as a parameter. The function should return a string containing every other letter in word.
+code-
+def every_other_letter(word):
+  str=""
+  for i in range(0,len(word),2):
+    str=str+word[i]
+  return str
+print(every_other_letter("Codecademy"))
+print(every_other_letter("Hello world!"))
+print(every_other_letter(""))
+
+Q)Write a function named reverse_string that has a string named word as a parameter. The function should return word in reverse.
+code-
+def reverse_string(word):
+  str=""
+  for i in range(len(word)-1,-1,-1):
+    str=str+word[i]
+  return str
+print(reverse_string("Codecademy"))
+print(reverse_string("Hello world!"))
+print(reverse_string(""))
+
+Q)Write a function called make_spoonerism that takes two strings as parameters named word1 and word2. Finding the first syllable of a word is a difficult task, so for our function, we’re going to switch the first letters of each word. Return the two new words as a single string separated by a space.
+code-
+def make_spoonerism(word1,word2):
+  return word2[0]+word1[1:]+" "+word1[0]+word2[1:]
+print(make_spoonerism("Codecademy", "Learn"))
+print(make_spoonerism("Hello", "world!")) 
+print(make_spoonerism("a", "b"))
+
+Q)Create a function named add_exclamation that has one parameter named word. This function should add exclamation points to the end of word until word is 20 characters long. If word is already at least 20 characters long, just return word.
+code-
+def add_exclamation(word):
+  while len(word)<20:
+    word = word+'!'
+  return word
+
+print(add_exclamation("Codecademy")) 
+print(add_exclamation("Codecademy is the best place to learn"))
